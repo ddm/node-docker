@@ -7,7 +7,6 @@ RUN apk --no-cache add libstdc++ &&\
     apk --no-cache add --virtual build-dependencies \
       git \
       binutils-gold \
-       \
       linux-headers \
       musl-dev \
       build-base \
@@ -18,7 +17,10 @@ RUN apk --no-cache add libstdc++ &&\
     ./configure && \
     make -j$(getconf _NPROCESSORS_ONLN) &&\
     make install &&\
-    rm -rf ${NODE_BUILD_PATH} &&\
     apk del --purge build-dependencies &&\
+    rm -rf /tmp/* &&\
+    rm -rf /root/* &&\
     rm -rf /var/cache/apk/*
+
 RUN node --version
+
