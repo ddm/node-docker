@@ -11,9 +11,8 @@ RUN apk --no-cache add libstdc++ &&\
       musl-dev \
       build-base \
       python &&\
-    git clone https://github.com/nodejs/node.git ${NODE_BUILD_PATH} &&\
+    git clone --depth 1 --branch v${NODE_VERSION} https://github.com/nodejs/node.git ${NODE_BUILD_PATH} &&\
     cd ${NODE_BUILD_PATH} &&\
-    git checkout v${NODE_VERSION} &&\
     ./configure && \
     make -j$(getconf _NPROCESSORS_ONLN) &&\
     make install &&\
@@ -23,4 +22,3 @@ RUN apk --no-cache add libstdc++ &&\
     rm -rf /var/cache/apk/*
 
 RUN node --version
-
