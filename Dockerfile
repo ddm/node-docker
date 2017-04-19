@@ -1,6 +1,6 @@
 FROM alpine:3.5
 
-ARG NODE_VERSION=7.8.0
+ARG NODE_VERSION=7.9.0
 ARG NODE_BUILD_PATH=/tmp/node/
 
 RUN apk --no-cache add --virtual runtime-dependencies libstdc++ &&\
