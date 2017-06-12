@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.6
 
 ARG NODE_VERSION=8.1.0
 ARG NODE_BUILD_PATH=/tmp/node/
