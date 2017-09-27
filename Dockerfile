@@ -12,7 +12,7 @@ RUN apk --no-cache add --virtual runtime-dependencies libstdc++ &&\
       linux-headers \
       musl-dev \
       build-base \
-      python 
+      python \
       bash &&\
     git clone --depth 1 --branch v${NODE_VERSION} https://github.com/nodejs/node.git ${NODE_BUILD_PATH} &&\
     cd ${NODE_BUILD_PATH} &&\
