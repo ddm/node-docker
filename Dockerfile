@@ -1,6 +1,6 @@
 FROM arm32v6/alpine:3.6
 
-ARG NODE_VERSION=8.8.0
+ARG NODE_VERSION=8.9.0
 ARG NODE_BUILD_PATH=/tmp/node/
 
 RUN apk --no-cache add --virtual runtime-dependencies libstdc++ &&\
